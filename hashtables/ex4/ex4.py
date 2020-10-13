@@ -4,6 +4,11 @@ def has_negatives(a):
     """
     # Your code here
 
+    table = {}
+    for i in a:
+        table[i] = True
+    result = [i for i in a if i > 0 and table.get(i*-1)]
+
     return result
 
 

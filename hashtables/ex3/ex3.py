@@ -4,6 +4,20 @@ def intersection(arrays):
     """
     # Your code here
 
+    result = []
+    nums = dict()
+
+    for array in arrays:
+        for element in array:
+            if element in nums:
+                nums[element] += 1
+            else:
+                nums[element] = 1
+
+    for key,val in nums.items():
+        if val == len(arrays):
+            result.append(key)
+
     return result
 
 

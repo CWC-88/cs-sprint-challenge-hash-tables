@@ -9,6 +9,18 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    table = {}
+    
+    route = []
+
+    for ticket in tickets:
+        table[ticket.source] = ticket.destination
+
+    route.append(table.pop('NONE'))
+
+    for index in range(length -1 ):
+        route.append(table.get(route[index]))
+        
 
     return route
+
